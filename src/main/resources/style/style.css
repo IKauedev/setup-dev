@@ -1,0 +1,12 @@
+#installButton {
+    -fx-background-color: #00aaff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+#installButton:hover {
+    -fx-effect: dropshadow(gaussian, #005577, 10, 0.5, 0, 0);
+}

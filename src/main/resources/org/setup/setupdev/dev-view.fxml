@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.setup.setupdev.DevController"
+            prefWidth="850" prefHeight="650" style="-fx-background-color: #0d1117;">
+    <VBox spacing="15" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10"
+          AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+        <!-- Título -->
+        <Label text="Instalador de Ambiente de Desenvolvimento"
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #58a6ff; -fx-font-family: 'Segoe UI Semibold', Verdana, sans-serif;" />
+
+        <!-- Select All + Botão Instalar -->
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <CheckBox fx:id="selectAllCheckBox" text="Selecionar Todos" onAction="#onSelectAll"
+                      style="-fx-text-fill: #c9d1d9; -fx-font-size: 14px;" />
+            <Button fx:id="installButton" text="Instalar Selecionados" onAction="#onInstallClick"
+                    maxWidth="200"
+                    style="-fx-background-color: #238636; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 6;" />
+        </HBox>
+
+        <!-- Scroll com conteúdo dos softwares -->
+        <ScrollPane fitToWidth="true" prefHeight="400" style="-fx-background: transparent;">
+            <VBox spacing="12" style="-fx-background-color: #161b22; -fx-background-radius: 10;">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <!-- Categorias -->
+                <!-- Desenvolvimento Web -->
+                <TitledPane text="Desenvolvimento Web" expanded="true" collapsible="true"
+                            style="-fx-text-fill: #58a6ff; -fx-font-weight: bold; -fx-font-size: 16px;">
+                    <VBox spacing="6" style="-fx-background-color: #21262d; -fx-background-radius: 8;">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <CheckBox fx:id="gitCheckBox" text="Git" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="vscodeCheckBox" text="Visual Studio Code" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="nodeCheckBox" text="Node.js" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="javaCheckBox" text="Java JDK" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="pythonCheckBox" text="Python" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="httpieCheckBox" text="HTTPie" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="postmanCheckBox" text="Postman" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="dockerDesktopCheckBox" text="Docker Desktop" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="postgresqlCheckBox" text="PostgreSQL" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="githubDesktopCheckBox" text="GitHub Desktop" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="mongoCompassCheckBox" text="MongoDB Compass" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="insomniaCheckBox" text="Insomnia" style="-fx-text-fill: #c9d1d9;" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- IDEs -->
+                <TitledPane text="IDEs e Ferramentas de Programador" expanded="true" collapsible="true"
+                            style="-fx-text-fill: #58a6ff; -fx-font-weight: bold; -fx-font-size: 16px;">
+                    <VBox spacing="6" style="-fx-background-color: #21262d; -fx-background-radius: 8;">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <CheckBox fx:id="eclipseCheckBox" text="Eclipse" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="springToolsCheckBox" text="Spring Tools Suite" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="androidStudioCheckBox" text="Android Studio" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="pycharmCheckBox" text="PyCharm" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="notepadppCheckBox" text="Notepad++" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="notionCheckBox" text="Notion" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="dbeaverCheckBox" text="DBeaver" style="-fx-text-fill: #c9d1d9;" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- Design -->
+                <TitledPane text="Design e Protótipos" expanded="true" collapsible="true"
+                            style="-fx-text-fill: #58a6ff; -fx-font-weight: bold; -fx-font-size: 16px;">
+                    <VBox spacing="6" style="-fx-background-color: #21262d; -fx-background-radius: 8;">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <CheckBox fx:id="figmaDesktopCheckBox" text="Figma Desktop" style="-fx-text-fill: #c9d1d9;" />
+                    </VBox>
+                </TitledPane>
+
+                <!-- Utilitários -->
+                <TitledPane text="Utilitários" expanded="true" collapsible="true"
+                            style="-fx-text-fill: #58a6ff; -fx-font-weight: bold; -fx-font-size: 16px;">
+                    <VBox spacing="6" style="-fx-background-color: #21262d; -fx-background-radius: 8;">
+                        <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                        <CheckBox fx:id="sevenZipCheckBox" text="7-Zip" style="-fx-text-fill: #c9d1d9;" />
+                        <CheckBox fx:id="cmderCheckBox" text="Cmder" style="-fx-text-fill: #c9d1d9;" />
+                    </VBox>
+                </TitledPane>
+            </VBox>
+        </ScrollPane>
+
+        <!-- Log -->
+        <Label text="Log de Instalação:"
+               style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #58a6ff;" />
+        <TextArea fx:id="logTextArea" prefHeight="180" wrapText="true" editable="false"
+                  style="-fx-control-inner-background: #0d1117; -fx-text-fill: #00ffcc; -fx-font-family: 'Consolas', 'Monaco', monospace; -fx-font-size: 13px; -fx-background-radius: 8;" />
+    </VBox>
+</AnchorPane>
